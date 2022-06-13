@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_homepage_heroes",
+  "info": {
+    "displayName": "HomepageHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Spaudos Departamentas",
+      "required": true
+    },
+    "subText": {
+      "type": "text",
+      "required": true
+    },
+    "heroButtonText": {
+      "type": "string"
+    },
+    "heroButtonURL": {
+      "type": "string"
+    },
+    "heroButton": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
