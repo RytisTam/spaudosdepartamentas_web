@@ -1,5 +1,6 @@
 import App from "next/app";
 import Head from "next/head";
+import { appWithTranslation } from 'next-i18next';
 
 import '../styles/bootstrap.min.css'
 import '../styles/animate.min.css'
@@ -54,4 +55,4 @@ MyApp.getInitialProps = async (ctx) => {
   return { ...appProps, pageProps: { global: globalRes.data } };
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import NextImage from '../image'
 
 const MainBanner = ({heroData}) => {
-    console.log(heroData)
+    const heroImage = `${'http://localhost:1337'+heroData.attributes.hero.image.data.attributes.url}`
+    console.log(heroImage);
         return (
             <>
                 <div className="main-banner main-banner-one">
@@ -31,18 +33,19 @@ const MainBanner = ({heroData}) => {
                             </div>
 
                             <div className="col-lg-5 col-md-12">
-                                <div className="banner-image mbanner-bg-one">
+                                <div className="banner-image mbanner-bg-one" style={{backgroundImage:`URL(${heroImage})`}}>
                                     <div className="d-table">
                                         <div className="d-table-cell">
                                             {/* Animate Image */}
                                             <div className="animate-banner-image">
-                                                <img src="/images/animate-banner-img1.jpg" alt="image" />
+                                                <NextImage image={heroData.attributes.hero.image} />
+                                                {/* <img src={heroData.attributes.hero.image.data.attributes.url} alt="image" /> */}
                                             </div>
                                         </div>
                                     </div>
                                     
                                     {/* For Small Device */}
-                                    <img src="/images/banner-slider/banner-img1.jpg" className="mbanner-img" alt="image" />
+                                    {/* <img src="/images/banner-slider/banner-img1.jpg" className="mbanner-img" alt="image" /> */}
                                 </div>
                             </div>
                         </div>
@@ -75,4 +78,5 @@ const MainBanner = ({heroData}) => {
         );
     }
 
+    
 export default MainBanner;
