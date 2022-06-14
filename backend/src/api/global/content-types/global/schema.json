@@ -5,7 +5,8 @@
     "singularName": "global",
     "pluralName": "globals",
     "displayName": "Global",
-    "name": "global"
+    "name": "global",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -24,13 +25,38 @@
       "required": true
     },
     "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
+      ]
+    },
+    "logo_colored": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true
+    },
+    "logo_white": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "logo_black": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
