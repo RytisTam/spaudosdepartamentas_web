@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from '../../utils/ActiveLink';
+import NextImage from '../image'
 
 class Navbar extends Component {
 
@@ -30,7 +31,6 @@ class Navbar extends Component {
     }
 
     render() {
-
         const { collapsed } = this.state;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
         const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
@@ -42,8 +42,8 @@ class Navbar extends Component {
                         <div className="container">
                             <nav className="navbar navbar-expand-md navbar-light">
                                 <Link href="/">
-                                    <a className="navbar-brand">
-                                        <img src="/images/logo.png" alt="logo" />
+                                    <a className="navbar-brand" style={{width:"150px"}}>
+                                        <NextImage image={this.props.logo_colored} />
                                     </a>
                                 </Link>
 

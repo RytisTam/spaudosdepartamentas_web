@@ -1,4 +1,7 @@
 import React from "react";
+import Head from "next/head";
+import { useContext } from "react";
+import { GlobalContext } from "../pages/_app";
 import Link from 'next/link'
 import { useRouter } from 'next/router'   
 import { useTranslation } from 'next-i18next'
@@ -24,23 +27,17 @@ import MainBanner from '../components/Main/MainBanner';
 // import BlogPostStyleOne from '../components/Common/BlogPostStyleOne';
 import Footer from '../components/Layout/Footer';
 
-const Home = ({homepage }) => {
+const Home = ({homepage, global}) => {
+  const { logo_colored } = useContext(GlobalContext);
   const router = useRouter()
   const { t } = useTranslation('common')
-  return (
-    // <Layout categories={categories}>
-    //   <Seo seo={homepage.attributes.seo} />
-    //   <div className="uk-section">
-    //     <div className="uk-container uk-container-large">
-    //       <h1>{homepage.attributes.hero.title}</h1>
-    //       <Articles articles={articles} />
-    //     </div>
-    //   </div>
-    // </Layout>
 
-    <>
-   
-      <Navbar />
+  return (
+    <>   
+      <Head>
+      <title>{homepage.attributes.seo.metaTitle}</title>
+      </Head>
+      <Navbar logo_colored={logo_colored} />
       <MainBanner heroData={homepage} />
       <div style={{margin: '20px'}}>
           <div>{t('current_locale')}: {t(router.locale)}</div>
@@ -74,9 +71,12 @@ const Home = ({homepage }) => {
 
 
 export async function getStaticProps({locale}) {
-  // Run API calls in parallel
   const [homepageRes] = await Promise.all([
-    fetchAPI(`/homepage`, {populate:{hero:{populate:'*'}, seo:{populate:'*'}}, locale:[locale]}),
+    fetchAPI(`/homepage`,
+     {populate:{
+      hero:{populate:'*'},
+      seo:{populate:'*'}},
+      locale:[locale]}),
   ]);
 
   return {

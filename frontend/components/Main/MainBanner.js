@@ -4,7 +4,6 @@ import NextImage from '../image'
 
 const MainBanner = ({heroData}) => {
     const heroImage = `${'http://localhost:1337'+heroData.attributes.hero.image.data.attributes.url}`
-    console.log(heroImage);
         return (
             <>
                 <div className="main-banner main-banner-one">

@@ -23,6 +23,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        {/* <title>{global.attributes.defaultSeo.metaTitle} | {global.attributes.siteName}</title> */}
         <link
           rel="shortcut icon"
           href={getStrapiMedia(global.attributes.favicon)}
@@ -49,6 +50,9 @@ MyApp.getInitialProps = async (ctx) => {
       defaultSeo: {
         populate: "*",
       },
+      logo_colored:{
+        populate: "*",
+      }
     },
   });
   // Pass the data to our page via props
