@@ -1,37 +1,52 @@
 import App from "next/app";
 import Head from "next/head";
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from "next-i18next";
 
-import '../styles/bootstrap.min.css'
-import '../styles/animate.min.css'
-import '../styles/boxicons.min.css'
+import { CacheProvider } from "@emotion/react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+
+import createEmotionCache from "../utils/createEmotionCache";
+import lightTheme from "../styles/theme/lightTheme";
+import "../styles/globals.css";
+
+import "../styles/bootstrap.min.css";
+import "../styles/animate.min.css";
+import "../styles/boxicons.min.css";
 // import 'react-accessible-accordion/dist/fancy-example.css'
 // import '../node_modules/react-modal-video/css/modal-video.min.css'
-import '../styles/style.css'
-import '../styles/responsive.css'
+import "../styles/style.css";
+import "../styles/responsive.css";
 
 import { createContext } from "react";
 import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 
+const clientSideEmotionCache = createEmotionCache();
+
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
-  const { global } = pageProps;
+  const { global, emotionCache = clientSideEmotionCache } = pageProps;
 
+
+  
   return (
     <>
       <Head>
-        {/* <title>{global.attributes.defaultSeo.metaTitle} | {global.attributes.siteName}</title> */}
         <link
           rel="shortcut icon"
           href={getStrapiMedia(global.attributes.favicon)}
         />
       </Head>
-      <GlobalContext.Provider value={global.attributes}>
-        <Component {...pageProps} />
-      </GlobalContext.Provider>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          <GlobalContext.Provider value={global.attributes}>
+            <Component {...pageProps} />
+          </GlobalContext.Provider>
+        </ThemeProvider>
+      </CacheProvider>
     </>
   );
 };
@@ -50,9 +65,9 @@ MyApp.getInitialProps = async (ctx) => {
       defaultSeo: {
         populate: "*",
       },
-      logo_colored:{
+      logo_colored: {
         populate: "*",
-      }
+      },
     },
   });
   // Pass the data to our page via props

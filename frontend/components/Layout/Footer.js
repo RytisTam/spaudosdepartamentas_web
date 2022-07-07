@@ -11,9 +11,9 @@ class Footer extends Component {
                         <div className="col-lg-4 col-md-6 col-sm-6">
                             <div className="single-footer-widget">
                                 <div className="logo">
-                                    <a href="/">
+                                    <Link href="/">
                                         <img src="/images/white-logo.png" alt="image" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </div>
@@ -60,17 +60,17 @@ class Footer extends Component {
                                 <ul className="support-list">
                                     <li>
                                         <Link href="/faq">
-                                            <a>FAQ's</a>
+                                            <p>FAQs</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/privacy-policy">
-                                            <a>Privacy Policy</a>
+                                            <p>Privacy Policy</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/terms-conditions">
-                                            <a>Terms & Conditions</a>
+                                            <p>Terms & Conditions</p>
                                         </Link>
                                     </li>
                                     <li>
@@ -99,22 +99,22 @@ class Footer extends Component {
 
                                 <ul className="social">
                                     <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
+                                        <a href="https://www.facebook.com/" >
                                             <i className="bx bxl-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/" target="_blank">
+                                        <a href="https://twitter.com/" >
                                             <i className="bx bxl-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
+                                        <a href="https://www.linkedin.com/" >
                                             <i className="bx bxl-linkedin"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
+                                        <a href="https://www.instagram.com/" >
                                             <i className="bx bxl-instagram"></i>
                                         </a>
                                     </li>
@@ -124,7 +124,7 @@ class Footer extends Component {
                     </div>
 
                     <div className="copyright-area">
-                        <p>Copyright &copy; {currentYear} Hepro. Designed by <a href="http://envytheme.com/" target="_blank">EnvyTheme</a></p>
+                        <p>Copyright &copy; {currentYear} Hepro. Designed by <a href="http://envytheme.com/" >EnvyTheme</a></p>
                     </div>
                 </div>
             </footer>

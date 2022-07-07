@@ -1,0 +1,69 @@
+{
+  "collectionName": "components_sections_siekiame_kokybes_kartus",
+  "info": {
+    "displayName": "Siekiame kokybės kartu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "blockTitle": {
+      "type": "text",
+      "default": "Siekiame kokybės kartu",
+      "required": true
+    },
+    "firstBlockName": {
+      "type": "string",
+      "default": "Patikrink nemokamai",
+      "required": true
+    },
+    "firstBlockText": {
+      "type": "text",
+      "required": true
+    },
+    "secondBlockName": {
+      "type": "string",
+      "default": "Dizaineri susipažink",
+      "required": true
+    },
+    "secondBlockText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdBlockName": {
+      "type": "string",
+      "required": true,
+      "default": "Naudokitės šablonais"
+    },
+    "thirdBlockText": {
+      "type": "text"
+    },
+    "firstBlockButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "secondBlockButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "thirdBlockButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "firstBlockButtonURL": {
+      "type": "string",
+      "required": true
+    },
+    "secondBlockButtonURL": {
+      "type": "string",
+      "required": true
+    },
+    "thirdBlockButtonURL": {
+      "type": "string",
+      "required": true
+    },
+    "blockText": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

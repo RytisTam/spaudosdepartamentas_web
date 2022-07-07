@@ -54,6 +54,17 @@
           "localized": false
         }
       }
+    },
+    "qualityFeaturesList": {
+      "displayName": "Siekiame kokybės kartu",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.siekiame-kokybes-kartu"
     }
   }
 }

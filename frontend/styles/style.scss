@@ -46,7 +46,7 @@ Default CSS
 =================================================*/
 
 $font-family: 'Poppins', sans-serif;
-$main-color: #13c4a1;
+$main-color: #099aa0;
 $optional-color: #ff612f;
 $black-color: #080a3c;
 $white-color: #ffffff;
@@ -1811,6 +1811,8 @@ Partner Area CSS
     }
 }
 
+
+
 /*================================================
 Services Area CSS
 =================================================*/
@@ -1912,6 +1914,7 @@ Services Area CSS
                 left: auto;
             };
         }
+        
     }
 }
 .services-image {
@@ -1956,9 +1959,29 @@ Services Area CSS
         }
     }
 
+
     i {
         margin-right: 7px;
         color: $main-color;
+    }
+}
+
+.feature-box-active {
+    color: $white-color;
+    background-color: $main-color;
+    border: 1px solid #f2effc;
+    box-shadow: 0px 2px 4px 0px rgba(12, 0, 46, 0.04);
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 12px 22px;
+    padding-left: 25px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: $transition;
+
+    i {
+        margin-right: 7px;
+        color: $white-color;
     }
 }
 
@@ -2216,7 +2239,7 @@ FunFacts Area CSS
 .funfacts-inner {
     max-width: 1000px;
     margin: {
-        top: 140px;
+        // top: 140px;
         left: auto;
         right: auto;
     };
@@ -2251,7 +2274,7 @@ FunFacts Area CSS
     
     i {
         font-size: 35px;
-        color: #13c4a1;
+        color: #099aa0;
         width: 70px;
         height: 70px;
         line-height: 70px;
@@ -7365,4 +7388,8 @@ Let's Talk Area CSS
 }
 .lets-talk-btn {
     text-align: right;
+}
+
+.languageSelectorFlag {
+    width:24px;
 }

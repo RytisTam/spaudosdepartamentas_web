@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react';
 import Link from '../../utils/ActiveLink';
 import NextImage from '../image'
-
+import Image from 'next/image'
+import LanguageSelector from './LanguageSelector'
+import { getStrapiMedia } from "../../lib/media";
+import MenuOpenIcon from '@mui/icons-material/MenuOpenRounded'
 class Navbar extends Component {
 
     // Navbar 
@@ -16,6 +19,7 @@ class Navbar extends Component {
         });
     }
     componentDidMount() {
+
         let elementId = document.getElementById("navbar");
         document.addEventListener("scroll", () => {
             if (window.scrollY > 170) {
@@ -29,24 +33,31 @@ class Navbar extends Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+    
+
 
     render() {
         const { collapsed } = this.state;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
         const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
-
+        
+        
+        
         return (
             <>
+
+                
+                
                 <div id="navbar" className="navbar-area">
                     <div className="main-nav">
                         <div className="container">
                             <nav className="navbar navbar-expand-md navbar-light">
                                 <Link href="/">
-                                    <a className="navbar-brand" style={{width:"150px"}}>
-                                        <NextImage image={this.props.logo_colored} />
-                                    </a>
+                                    <div className="navbar-brand d-flex justify-content-center">
+                                        <Image src={getStrapiMedia(this.props.logo_colored)} width={this.props.logo_colored.data.attributes.width / 4} height={this.props.logo_colored.data.attributes.height / 4}/>
+                                    </div>
                                 </Link>
-
+                                <LanguageSelector/>
                                 <button 
                                     onClick={this.toggleNavbar} 
                                     className={classTwo}
@@ -63,10 +74,33 @@ class Navbar extends Component {
 
                                 <div className={classOne} id="navbarSupportedContent">
                                     <ul className="navbar-nav">
+                                        
+                                         <li className="nav-item">
+                                            <Link href="/about" activeClassName="active">
+                                                <a className="nav-link">Gaminiai</a>
+                                            </Link>
+                                        </li>
+                                        
+                                        
+                                        
+
+                                        <li className="nav-item">
+                                            <Link href="/about" activeClassName="active">
+                                                <a className="nav-link">Paslaugos</a>
+                                            </Link>
+                                        </li>
+
+
+                                        <li className="nav-item">
+                                            <Link href="/pricing" activeClassName="active">
+                                                <a className="nav-link">Kontaktai</a>
+                                            </Link>
+                                        </li>
+
                                         <li className="nav-item">
                                             <Link href="#">
                                                 <a className="nav-link" onClick={e => e.preventDefault()}>
-                                                    Home <i className='bx bx-chevron-down'></i>
+                                                <MenuOpenIcon/>
                                                 </a>
                                             </Link>
 
@@ -151,19 +185,7 @@ class Navbar extends Component {
                                             </ul>
                                         </li>
 
-                                        <li className="nav-item">
-                                            <Link href="/about" activeClassName="active">
-                                                <a className="nav-link">About</a>
-                                            </Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link href="/pricing" activeClassName="active">
-                                                <a className="nav-link">Pricing</a>
-                                            </Link>
-                                        </li>
-
-                                        <li className="nav-item">
+                                        {/* <li className="nav-item">
                                             <Link href="#">
                                                 <a className="nav-link" onClick={e => e.preventDefault()}>
                                                     Pages <i className='bx bx-chevron-down'></i>
@@ -253,44 +275,10 @@ class Navbar extends Component {
                                                     </Link>
                                                 </li>
                                             </ul>
-                                        </li>
- 
-                                        <li className="nav-item">
-                                            <Link href="#">
-                                                <a className="nav-link" onClick={e => e.preventDefault()}>
-                                                    Blog <i className='bx bx-chevron-down'></i>
-                                                </a>
-                                            </Link>
-
-                                            <ul className="dropdown-menu">
-                                                <li className="nav-item">
-                                                    <Link href="/blog" activeClassName="active">
-                                                        <a className="nav-link">Blog Grid</a>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nav-item">
-                                                    <Link href="/blog2" activeClassName="active">
-                                                        <a className="nav-link">Blog Right Sidebar</a>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nav-item">
-                                                    <Link href="/blog-details" activeClassName="active">
-                                                        <a className="nav-link">Blog Details</a>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </li>
- 
-                                        <li className="nav-item">
-                                            <Link href="/contact" activeClassName="active">
-                                                <a className="nav-link">Contact</a>
-                                            </Link>
-                                        </li>
-                                    </ul>
+                                        </li> */}
+                                    </ul> 
                                 </div>
-
+                                
                                 <div className="others-options ms-auto">
                                     <Link href="/login">
                                         <a className="optional-btn">
@@ -307,6 +295,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </div>
+                
             </>
         );
     }
