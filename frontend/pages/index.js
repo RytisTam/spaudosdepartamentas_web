@@ -7,26 +7,33 @@ import { fetchAPI } from "../lib/api";
 // import Instagram from 'instagram-web-api';
 // import instagram from 'user-instagram';
 import Navbar from '../components/Layout/Navbar'
+import NavbarV2 from '../components/Layout/NavbarV2'
 import MainBanner from '../components/Main/MainBanner'
 import Numbers from '../components/Homepage/Statistics'
 import QualityTextBlock from '../components/Homepage/QualityTextBlock'
 import InstagramFeed from "../components/Homepage/InstagramFeed/InstagramFeed";
 import Footer from '../components/Layout/Footer';
+import Footer_v2 from '../components/Layout/Footer_v2';
+import MainBannerTW from "../components/Main/MainBannerTW";
+
 
 const Home = ({homepage}) => {
-  const { logo_colored } = useContext(GlobalContext);
+  const { logo_colored, logo_white } = useContext(GlobalContext);
   const router = useRouter()
   return (
     <>   
       <Head>
       <title>{homepage.attributes.seo.metaTitle}</title>
       </Head>
-      <Navbar logo_colored={logo_colored} />
+      <NavbarV2 logo_colored={logo_colored}/>
+      {/* <Navbar logo_colored={logo_colored} /> */}
+      {/* <MainBannerTW heroData={homepage}/> */}
       <MainBanner heroData={homepage} />
       <Numbers/>
       <InstagramFeed/>
       <QualityTextBlock blockText={homepage.attributes.qualityFeaturesList}/>
-      <Footer />
+      <Footer logo_white={logo_white} />
+      <Footer_v2/>
     </>
   );
 };

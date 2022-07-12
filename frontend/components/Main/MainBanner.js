@@ -6,7 +6,7 @@ const MainBanner = ({heroData}) => {
     const heroImage = `${'http://localhost:1337'+heroData.attributes.hero.image.data.attributes.url}`
         return (
             <>
-                <div className="main-banner main-banner-one">
+                <div className="relative main-banner main-banner-one">
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-lg-7 col-md-12">

@@ -14,6 +14,8 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.9.3",
     "@fontsource/roboto": "^4.5.7",
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.4",
     "axios": "^0.27.2",
@@ -34,7 +36,10 @@
     "user-instagram": "^3.0.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.5"
   }
 }

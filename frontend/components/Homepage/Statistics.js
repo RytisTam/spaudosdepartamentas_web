@@ -12,7 +12,9 @@ const WhyChooseUs = () => {
     {
         return (
             <>
-                <section className="services-area ptb-100" style={{backgroundColor:"#FBFBFB"}}>
+                
+
+                 <section className="services-area p-12" style={{backgroundColor:"#FBFBFB"}}>
                     <div className="container">
                         <div className="section-title">
                         <ScrollAnimation animateIn="fadeInLeft" delay={50} animateOnce={true}>
